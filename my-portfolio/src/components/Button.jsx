@@ -1,8 +1,8 @@
 import React from 'react'
 import '../index.css'
-const Button = ({text}) => {
+const Button = ({text, className}) => {
   return (
-<button className='button'>
+<button className={className}>
   {text}
 </button>
   )
