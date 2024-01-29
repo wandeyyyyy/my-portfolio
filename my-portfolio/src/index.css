@@ -1,4 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
+ .button{
+    border: 1px solid #fe6235;
+    background-color: #1A1D26;
+    color: #fe6235;
+    padding: 4px 20px;
+    margin-left: 32px;
+    font-weight: 700;
+    transition: background-color 0.3s, color 0.3s;
+    position: relative;
+    overflow: hidden;
+ }
+ .button::before{
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 0;
+   height: 100%;
+   background-color: #fe6235;
+   transition: width 0.3s;
+  z-index: -100;
+ }
+ .button:hover::before{
+  width: 100%;
+
+ }
+ .button:hover{
+   color: #fbfcfe;
+   z-index: 100;
+ }

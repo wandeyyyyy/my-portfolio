@@ -1,18 +1,17 @@
 import React from 'react'
 
-import { Home } from './components'
-import { About } from './components'
-import {Contact } from './components'
-import { Projects } from './components'
+import { Home , About, Contact, Projects, Nav} from './components'
+
 
 
 function App() {
   return (
     <>
+    <Nav />
      <Home />
      <About />
-     <Contact />
-     <Projects />
+     <Projects/>
+   <Contact/>
 
     </>
   )
