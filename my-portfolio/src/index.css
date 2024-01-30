@@ -100,3 +100,10 @@ svg{
     transform: translateY(0);
   }
 }
+
+section{
+  padding: 50px 70px;
+}
+.buttonContact{
+  padding: 15px 50px;
+}
