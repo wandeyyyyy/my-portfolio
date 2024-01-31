@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Home , About, Contact, Projects, Nav} from './components'
+import { Home , About, Contact, Projects, Nav, Skills} from './components'
 
 
 
@@ -10,6 +10,7 @@ function App() {
     <Nav />
      <Home />
      <About />
+     <Skills/>
      <Projects/>
    <Contact/>
 

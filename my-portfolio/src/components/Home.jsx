@@ -11,7 +11,7 @@ const Home = () => {
       <span className='text-orange'>YEWANDE.</span>
   
      </h1>
-     <p className='sm:text-[34px] text-[20px]'>MERN Stack Developer</p>
+     <p className='sm:text-[34px] text-[20px]'>Frontend Web Developer</p>
      <p className='text-[20px] font-normal italic text-grey mt-10'>"passionate about building beautiful things"</p>
      <Button text="Contact Me" className="button buttonContact mt-10"/>
      </div>
