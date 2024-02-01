@@ -7,7 +7,7 @@ const Home = () => {
     <section className='text-white  bg-black'>
       <div className='md:flex  w-[100%] justify-between items-center'>
       <div className='text-center md:w-[50%] md:text-start'>
-     <h1 className=' text-[52px] sm:text-[62px] font-roboto'>Hi, I am <br/>
+     <h1 className=' text-[48px] sm:text-[62px] font-roboto'>Hi, I am <br/>
       <span className='text-orange'>YEWANDE.</span>
   
      </h1>

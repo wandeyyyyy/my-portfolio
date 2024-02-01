@@ -107,7 +107,11 @@ section{
 .buttonContact{
   padding: 15px 50px;
 }
-
+.tech{
+  padding: 20px 10px;
+  width: 90%;
+  border-bottom: 2px solid #fe6235;
+}
 .laptopimg{
   animation: move 3s infinite;
   border-radius: 10px;
@@ -137,8 +141,28 @@ transition: 0.4s ease;
   background-color: #202431;
  
 }
-@media screen and (max-width: 1060px) {
-  section{
-    padding: 50px !important;
+
+.skillsimg{
+  animation: rotate 10s linear infinite;
+  border-radius: 30%;
+}
+@keyframes rotate {
+  
+  0%{
+    transform: rotate(0);
+  }
+
+  100%{
+    transform: rotate(360deg);
   }
 }
+@media screen and (max-width: 1060px) {
+  section{
+    padding: 30px 20px;
+  }
+
+  .tech{
+    width: 100%;
+  }
+}
+
