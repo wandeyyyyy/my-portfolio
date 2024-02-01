@@ -6,7 +6,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+*{
+  scroll-behavior: smooth;
+}
  .button{
     border: 1px solid #fe6235;
     background-color: #1A1D26;
@@ -106,6 +108,7 @@ section{
 }
 .buttonContact{
   padding: 15px 50px;
+
 }
 .tech{
   padding: 20px 10px;
@@ -156,6 +159,23 @@ transition: 0.4s ease;
     transform: rotate(360deg);
   }
 }
+
+.my-input{
+  outline: none;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 4px 0;
+  color: #1A1D26;
+  font-size: 16px;
+  caret-color: #fe6235;
+}
+.sendBtn{
+  border-radius: 4px;
+}
+
+
+
 @media screen and (max-width: 1060px) {
   section{
     padding: 30px 20px;

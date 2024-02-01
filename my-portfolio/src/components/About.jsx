@@ -3,7 +3,7 @@ import { code, phone, solve } from '../assets'
 
 const About = () => {
   return (
-    <section className='bg-black h-[100%]'>
+    <section id='about' className='bg-black h-[100%]'>
       <div className=' text-white '>
     <h1 className=' text-grey/40 md:text-[170px] sm:text-[100px] text-[80px] md:tracking-widest font-poppins font-extrabold text-center md:text-left'>About 
     </h1>
