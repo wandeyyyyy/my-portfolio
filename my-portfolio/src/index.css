@@ -105,6 +105,23 @@ svg{
 
 section{
   padding: 70px 100px;
+  margin-top: -2px;
+  /* border-top: 1px solid #6e6d72; */
+}
+.footer{
+  width: 100%;
+  border-top: 1px solid #6e6d72;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+.footer1{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  width: 98%;
+
 }
 .buttonContact{
   padding: 15px 50px;

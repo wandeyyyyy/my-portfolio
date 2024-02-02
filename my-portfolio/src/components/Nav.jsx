@@ -12,7 +12,7 @@ const Nav = () => {
 
   const [toggle, settoggle] = useState(false)
   return (
-    <nav className='flex w-full py-6 px-6 sm:px-10 justify-between items-center bg-black'>
+    <nav className='flex w-full py-6 px-6 sm:px-10 justify-between items-center bg-black sm:fixed z-50'>
       <div className='flex'>
    <h1 className='text-white logo text-[24px] font-extrabold font-roboto tracking-widest mr-1 text-shadow-md'>Wandey</h1>
 <button className='musicbtn px-2 py-1 rounded-full bg-orange'>

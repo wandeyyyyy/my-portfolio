@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Home , About, Contact, Projects, Nav, Skills} from './components'
+import { Home , About, Contact, Projects, Nav, Skills, Footer} from './components'
 
 
 
@@ -13,7 +13,7 @@ function App() {
      <Skills/>
      <Projects/>
    <Contact/>
-
+<Footer/>
     </>
   )
 }
