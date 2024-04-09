@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import axios from 'axios'
 import '../index.css'
 const MyForm = () => {
   // State to manage form data
@@ -12,16 +13,24 @@ const MyForm = () => {
 
   // Handle input changes
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
+
     setFormData({
       ...formData,
-      [name]: value,
+      [e.target.name]: e.target.value 
     });
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    try {
+      await axios.post('/send-email', formData);
+      alert('Email sent successfully');
+      setFormData({ name: '', email: '', subject: '', message: ''  });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('Failed to send email');
+    }
     // Add your form submission logic here
     console.log('Form submitted:', formData);
   };
@@ -36,6 +45,7 @@ const MyForm = () => {
           value={formData.name}
           onChange={handleInputChange}
           className='w-[100%] h-[40px] my-input'
+          required
         />
       </label>
       <br />
@@ -47,6 +57,7 @@ const MyForm = () => {
           value={formData.email}
           onChange={handleInputChange}
           className='w-[100%] h-[40px] my-input'
+          required
         />
       </label>
       <br />
@@ -58,6 +69,7 @@ const MyForm = () => {
           value={formData.subject}
           onChange={handleInputChange}
           className='w-[100%] h-[50px] my-input'
+          required
         />
       </label>
       <br />
@@ -68,6 +80,7 @@ const MyForm = () => {
           value={formData.message}
           onChange={handleInputChange}
           className='w-[100%] my-input'
+          required
         />
       </label>
       <br />
