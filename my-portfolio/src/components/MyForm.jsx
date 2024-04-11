@@ -1,6 +1,8 @@
 
 import React, { useState } from 'react';
-import axios from 'axios'
+import axios from 'axios';
+import swal from 'sweetalert2';
+
 import '../index.css'
 const MyForm = () => {
   // State to manage form data
@@ -21,19 +23,33 @@ const MyForm = () => {
   };
 
   // Handle form submission
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      await axios.post('/send-email', formData);
-      alert('Email sent successfully');
-      setFormData({ name: '', email: '', subject: '', message: ''  });
-    } catch (error) {
-      console.error('Error sending email:', error);
-      alert('Failed to send email');
-    }
-    // Add your form submission logic here
-    console.log('Form submitted:', formData);
-  };
+const handleSubmit = (e) => {
+  e.preventDefault();
+  
+  axios.post("http://localhost:5000/api/mail", formData)
+  .then(() => {
+    // Display SweetAlert notification on success
+    swal.fire({
+    icon: 'success',
+      text: 'Message sent Successfully',
+      confirmButtonColor: '#fe6235'
+    });
+    // Reset form data after submission
+    setFormData({
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+    });
+  })
+    .catch(() => {
+      console.log("Failed");
+    });
+
+  // Add your form submission logic here
+  console.log('Form submitted:', formData);
+};
+
 
   return (
     <form onSubmit={handleSubmit}>

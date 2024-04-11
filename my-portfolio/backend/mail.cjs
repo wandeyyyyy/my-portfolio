@@ -1,40 +1,59 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
-
+const cors = require('cors');
+const dotenv = require('dotenv');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 5000;
 
-app.use(bodyParser.json());
+dotenv.config();
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true}));
 
-app.post('/send-email', (req, res) => {
+
+
+
+
+
+
+
+app.post("/api/mail", (req, res) => {
   const { name, email, subject, message } = req.body;
 
-  const transporter = nodemailer.createTransport({
-    service: 'Gmail',
-    auth: {
-      user: 'yewandeadeyemi84@gmail.com',
-      pass: 'mhngtvvmvmwxteyl'
-    }
-  });
+  // Function to send email
+  const sendMail = (name, email, subject, message) => {
+    return new Promise((resolve, reject) => {
+      let transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+          user: "yewandeadeyemi84@gmail.com", 
+          pass: process.env.MAIL_PASSWORD,
+        }
+      });
 
-  const mailOptions = {
-    from: 'yewandeadeyemi84@gmail.com',
-    to: 'yewandeadeyemi14@gmail.com',
-    subject: subject,
-    text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
+      const mailOptions = {
+        from: name,
+        to: "yewandeadeyemi84@gmail.com", 
+        subject: subject,
+        text: `hi my name is ${name},${email},${message}`,
+      };
+
+      transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          console.log('Error sending email:', error);
+          reject({ message: "An error occurred while sending the email" });
+        } else {
+          
+          resolve({ message: "Email sent successfully" });
+        }
+      });
+    });
   };
 
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.error('Error sending email:', error);
-      res.status(500).send('Error sending email');
-    } else {
-      console.log('Email sent:', info.response);
-      res.status(200).send('Email sent successfully');
-    }
-    resl
-  });
+  // Call sendMail function to send email
+  sendMail(name, email, subject, message)
+    .then((response) => res.send(response))
+    .catch((error) => res.status(500).send(error));
 });
 
 app.listen(PORT, () => {
