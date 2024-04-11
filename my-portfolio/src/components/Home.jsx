@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import Button from './Button'
 import AOS from 'aos';
+
 import 'aos/dist/aos.css'
 import { laptop } from '../assets'
 import '../index.css'
@@ -16,7 +17,9 @@ const Home = () => {
     );
   }, []);
   return (
+    
     <section id='home' className='text-white  bg-black sm:pt-36'>
+     
       <div className='md:flex  w-[100%] justify-between items-center'>
       <div className='text-center md:w-[50%] md:text-start' data-aos="fade-up-right">
      <h1 className=' text-[48px] sm:text-[62px] font-roboto'>Hi, I am <br/>

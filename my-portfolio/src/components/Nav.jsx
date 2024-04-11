@@ -33,7 +33,7 @@ const Nav = () => {
  <div className='sm:hidden'>
         <img src={toggle ? close : menu} alt='menu' className='w-[28px] h-[28px] object-contain ' onClick={() => settoggle((prev) => !prev)}/>
 
-        <div className={`${toggle ? 'flex' : 'hidden' } p-6  h-fit absolute top-20 w-[96.5%] right-0 mx-1.5 my-2 min-w-[140px] rounded-xl sidebar bg-opacity-5 backdrop-filter backdrop-blur-xl bg-white`}>
+        <div className={`${toggle ? 'flex' : 'hidden' } p-6 absolute h-fit z-10 top-20 right-0 w-[96.5%] mx-1.5 my-2 min-w-[140px] rounded-xl sidebar bg-opacity-5 backdrop-filter backdrop-blur-xl bg-white`}>
         <ul className='list-none flex  flex-col justify-end items-center flex-1'>
 {navLinks.map((nav,index) =>(
  <li key={nav.id} className={`font-poppins font-bold  cursor-pointer text-white  hover:text-grey text-[18px] ${index === navLinks.length - 1 ? 'mr-0' : 'mb-10'}`}>

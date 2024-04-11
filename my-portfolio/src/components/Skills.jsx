@@ -20,7 +20,7 @@ const Skills = () => {
     <h1 className='relative text-grey/40 md:text-[170px] sm:text-[100px] text-[80px] md:tracking-widest font-poppins font-extrabold text-center md:text-left'>Skills
     </h1>
       <p className=' text-orange md:text-[60px] text-center md:text-start font-semibold  text-[28px] font-poppins  t-[200px]'>My Coding Journey</p>
-      <p className='text-white sm:text-[18px] font-opensans mt-[20px] md:mt-auto  font-medium leading-loose'>
+      <p className='text-white sm:text-[18px] font-opensans mt-[20px] md:mt-auto  font-medium leading-loose'  data-aos="fade-up-right">
  My journey started when a friend of mine introduced me into tech. I have a laptop and i saw it as an opportunity to learn a good and profitable skill. I made lot of research on which stack to venture into. I am someone who loves design,creativity and would want to develop experiences that make people's live simple, so i chose Web Development. I used resources from freecodecamp,w3schools as a beginner and practiced immensely. Later on, i enrolled in a bootcamp, now i can create a responsive functioning website and im so much happy about it.
       </p>
     </div>
