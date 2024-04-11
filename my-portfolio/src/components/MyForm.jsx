@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert2';
 
+
 import '../index.css'
 const MyForm = () => {
   // State to manage form data
@@ -12,6 +13,7 @@ const MyForm = () => {
     subject: '',
     message: '',
   });
+  const [loading, setLoading] = useState(false);
 
   // Handle input changes
   const handleInputChange = (e) => {
@@ -25,9 +27,10 @@ const MyForm = () => {
   // Handle form submission
 const handleSubmit = (e) => {
   e.preventDefault();
-  
+  setLoading(true);
   axios.post("http://localhost:5000/api/mail", formData)
   .then(() => {
+    setLoading(false); 
     // Display SweetAlert notification on success
     swal.fire({
     icon: 'success',
@@ -43,6 +46,7 @@ const handleSubmit = (e) => {
     });
   })
     .catch(() => {
+      setLoading(false); 
       console.log("Failed");
     });
 
@@ -100,7 +104,9 @@ const handleSubmit = (e) => {
         />
       </label>
       <br />
-      <button type="submit" className='w-[100%] sendBtn text-white bg-orange py-2 mt-4'>Send</button>
+      <button type="submit" className='w-[100%] sendBtn text-white bg-orange py-2 mt-4'>
+      {loading ? 'Sending...' : 'Send'}
+      </button>
     </form>
   );
 };

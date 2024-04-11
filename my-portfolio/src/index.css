@@ -103,6 +103,10 @@ svg{
   }
 }
 
+body{
+  background-color: #1A1D26;
+}
+
 section{
   padding: 70px 100px;
   margin-top: -2px;

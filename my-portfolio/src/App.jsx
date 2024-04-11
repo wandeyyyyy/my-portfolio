@@ -1,19 +1,33 @@
-import React from 'react'
+import React ,{ useEffect}from 'react'
 
 import { Home , About, Contact, Projects, Nav, Skills, Footer} from './components'
 
-
+import './index.css'
 
 function App() {
+
   return (
     <>
+<body>
     <Nav />
-     <Home />
+ 
+     <Home/>
+     
+     
      <About />
-     <Skills/>
-     <Projects/>
-   <Contact/>
+  
+     
+     <Skills />
+  
+     
+
+     <Projects />
+  
+     
+   <Contact />
+
 <Footer/>
+</body>
     </>
   )
 }
